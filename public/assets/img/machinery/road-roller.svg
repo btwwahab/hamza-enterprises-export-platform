@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9edf3"/>
+      <stop offset="100%" stop-color="#c7d0dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="420" rx="270" ry="22" fill="#0f172a" opacity="0.12"/>
+
+  <!-- rear body -->
+  <rect x="420" y="290" width="150" height="70" rx="10" fill="#ff5a1f"/>
+  <!-- cab -->
+  <rect x="440" y="230" width="90" height="65" rx="8" fill="#ff5a1f"/>
+  <rect x="452" y="240" width="66" height="42" rx="6" fill="#8fd3ff" stroke="#13161f" stroke-width="3"/>
+
+  <!-- articulation -->
+  <rect x="380" y="335" width="40" height="16" rx="6" fill="#4b5563"/>
+
+  <!-- front frame -->
+  <rect x="230" y="335" width="150" height="18" rx="6" fill="#4b5563"/>
+
+  <!-- rear wheel -->
+  <circle cx="500" cy="380" r="38" fill="#13161f"/>
+  <circle cx="500" cy="380" r="16" fill="#5a6172"/>
+
+  <!-- drum -->
+  <rect x="200" y="345" width="150" height="65" rx="30" fill="#20242c"/>
+  <line x1="215" y1="345" x2="215" y2="410" stroke="#3a3f4a" stroke-width="3"/>
+  <line x1="250" y1="345" x2="250" y2="410" stroke="#3a3f4a" stroke-width="3"/>
+  <line x1="285" y1="345" x2="285" y2="410" stroke="#3a3f4a" stroke-width="3"/>
+  <line x1="320" y1="345" x2="320" y2="410" stroke="#3a3f4a" stroke-width="3"/>
+
+  <text x="400" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5a6172" letter-spacing="2">ROAD ROLLER</text>
+</svg>

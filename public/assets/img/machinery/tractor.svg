@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eaf1e8"/>
+      <stop offset="100%" stop-color="#cddccb"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="410" cy="425" rx="270" ry="22" fill="#0f172a" opacity="0.12"/>
+
+  <!-- exhaust stack -->
+  <rect x="330" y="150" width="14" height="70" rx="4" fill="#20242c"/>
+
+  <!-- hood -->
+  <path d="M270 260 L390 260 L390 330 L255 330 Z" fill="#2f8f3f"/>
+  <!-- cab frame -->
+  <path d="M390 200 L470 200 L470 330 L390 330 Z" fill="none" stroke="#20242c" stroke-width="8"/>
+  <rect x="398" y="210" width="64" height="70" rx="4" fill="#8fd3ff" opacity="0.6"/>
+  <!-- seat -->
+  <rect x="410" y="295" width="30" height="20" rx="4" fill="#13161f"/>
+
+  <!-- body between axles -->
+  <rect x="390" y="330" width="90" height="20" fill="#2f8f3f"/>
+
+  <!-- rear big wheel -->
+  <circle cx="475" cy="380" r="62" fill="#13161f"/>
+  <circle cx="475" cy="380" r="28" fill="#5a6172"/>
+  <circle cx="475" cy="380" r="10" fill="#20242c"/>
+
+  <!-- front small wheel -->
+  <circle cx="285" cy="392" r="34" fill="#13161f"/>
+  <circle cx="285" cy="392" r="15" fill="#5a6172"/>
+
+  <!-- front axle link -->
+  <rect x="285" y="335" width="10" height="55" fill="#4b5563"/>
+
+  <text x="410" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#4f6350" letter-spacing="2">AGRICULTURAL TRACTOR</text>
+</svg>
