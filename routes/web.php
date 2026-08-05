@@ -33,6 +33,7 @@ Route::get('/machinery-detail', [MachineryController::class, 'show'])->name('mac
 Route::get('/parts', [PartController::class, 'index'])->name('parts');
 Route::get('/part-detail', [PartController::class, 'show'])->name('part-detail');
 Route::get('/events', [EventController::class, 'index'])->name('events');
+Route::get('/event-detail', [EventController::class, 'show'])->name('event-detail');
 Route::view('/about-us', 'pages.about-us')->name('about');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::view('/contact-us', 'pages.contact-us')->name('contact');

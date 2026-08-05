@@ -22,6 +22,9 @@ class EventRequest extends FormRequest
             'summary' => ['required', 'string', 'max:500'],
             'content' => ['required', 'string'],
             'image' => ['nullable', 'image', 'max:5120'],
+            'link_facebook' => ['nullable', 'url', 'max:500'],
+            'link_twitter' => ['nullable', 'url', 'max:500'],
+            'link_whatsapp' => ['nullable', 'url', 'max:500'],
         ];
     }
 }

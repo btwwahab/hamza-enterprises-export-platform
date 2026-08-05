@@ -93,6 +93,15 @@ function renderEventCards(events) {
   }
 
   events.forEach(ev => {
+    const detailUrl = `/event-detail?id=${encodeURIComponent(ev.id)}`;
+
+    const shareIcons = [
+      ev.linkFacebook ? `<a href="${ev.linkFacebook}" target="_blank" rel="noopener" class="share-dot fb" style="width: 28px; height: 28px; font-size: 0.8rem; background: #1877f2; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none;">f</a>` : '',
+      ev.linkTwitter ? `<a href="${ev.linkTwitter}" target="_blank" rel="noopener" class="share-dot tw" style="width: 28px; height: 28px; font-size: 0.8rem; background: #1da1f2; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none;">t</a>` : '',
+      ev.linkWhatsapp ? `<a href="${ev.linkWhatsapp}" target="_blank" rel="noopener" class="share-dot wa" style="width: 28px; height: 28px; font-size: 0.8rem; background: #25d366; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none;">w</a>` : '',
+    ].join('');
+    const hasShareLinks = Boolean(ev.linkFacebook || ev.linkTwitter || ev.linkWhatsapp);
+
     const cardHTML = `
       <article class="event-feed-card" style="margin-bottom: 30px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;">
         <div class="event-card-media" style="width: 100%; height: 320px; overflow: hidden; position: relative;">
@@ -106,17 +115,16 @@ function renderEventCards(events) {
               <span class="month" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">${ev.dateMonth}</span>
               <span class="year" style="font-size: 0.7rem; opacity: 0.8; margin-top: 2px;">2026</span>
             </div>
+            ${hasShareLinks ? `
             <div class="share-title" style="font-size: 0.65rem; color: var(--ink-faint); font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">SHARE THIS</div>
             <div class="social-share-dots" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-              <a href="#" class="share-dot fb" style="width: 28px; height: 28px; font-size: 0.8rem; background: #1877f2; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none;">f</a>
-              <a href="#" class="share-dot tw" style="width: 28px; height: 28px; font-size: 0.8rem; background: #1da1f2; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none;">t</a>
-              <a href="#" class="share-dot wa" style="width: 28px; height: 28px; font-size: 0.8rem; background: #25d366; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none;">w</a>
-            </div>
+              ${shareIcons}
+            </div>` : ''}
           </div>
           <!-- Content Column -->
           <div class="event-card-right-col" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <h2 class="event-card-title" style="margin: 0 0 12px 0; font-size: 1.35rem; font-weight: 700; line-height: 1.3;"><a href="#" style="color: var(--ink); text-decoration: none; transition: color 0.2s ease;">${ev.title}</a></h2>
+              <h2 class="event-card-title" style="margin: 0 0 12px 0; font-size: 1.35rem; font-weight: 700; line-height: 1.3;"><a href="${detailUrl}" style="color: var(--ink); text-decoration: none; transition: color 0.2s ease;">${ev.title}</a></h2>
               <p class="event-card-text" style="color: var(--ink-light); font-size: 0.92rem; line-height: 1.55; margin: 0 0 20px 0;">${ev.summary}</p>
             </div>
             <div class="event-card-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 15px; margin-top: auto; flex-wrap: wrap; gap: 10px;">
@@ -124,7 +132,7 @@ function renderEventCards(events) {
                 <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #dc2626;"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 ${ev.date} · ${ev.category}
               </span>
-              <a href="#" class="read-more-link" style="color: var(--accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease;">Read more &gt;&gt;</a>
+              <a href="${detailUrl}" class="read-more-link" style="color: var(--accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease;">Read more &gt;&gt;</a>
             </div>
           </div>
         </div>
@@ -143,7 +151,7 @@ function renderRecentEvents() {
   const recent = EVENTS_DATABASE.slice(0, 3);
   recent.forEach(ev => {
     const itemHTML = `
-      <a href="#" class="mini-car-card">
+      <a href="/event-detail?id=${encodeURIComponent(ev.id)}" class="mini-car-card">
         <img src="${ev.image}" alt="${ev.title}">
         <div>
           <h5 style="font-size: 0.82rem; margin-bottom: 2px;">${ev.title}</h5>

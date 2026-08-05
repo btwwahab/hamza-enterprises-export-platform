@@ -8,6 +8,7 @@ class Event extends Model
 {
     protected $fillable = [
         'code', 'title', 'category', 'event_date', 'author', 'shares_count', 'image', 'summary', 'content',
+        'link_facebook', 'link_twitter', 'link_whatsapp',
     ];
 
     protected $casts = [

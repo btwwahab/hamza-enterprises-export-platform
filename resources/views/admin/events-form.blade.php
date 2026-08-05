@@ -42,6 +42,14 @@
         <div class="form-group col-2"><label>Summary *</label><textarea name="summary" class="form-control" rows="2" required placeholder="Short summary shown in event cards…">{{ old('summary', $event->summary ?? '') }}</textarea></div>
         <div class="form-group col-2"><label>Full Content *</label><textarea name="content" class="form-control" rows="5" required placeholder="Full event description shown on detail view…">{{ old('content', $event->content ?? '') }}</textarea></div>
       </div>
+
+      <h4 style="margin:20px 0 10px;font-size:14px;color:var(--text-soft)">Share Links (optional)</h4>
+      <p style="margin:-6px 0 12px;font-size:12px;color:var(--text-soft)">Paste a link for any platform you want this event to be shareable on. Only platforms with a link filled in will show their icon on the site — leave blank to hide.</p>
+      <div class="form-grid">
+        <div class="form-group"><label>Facebook Link</label><input type="url" name="link_facebook" value="{{ old('link_facebook', $event->link_facebook ?? '') }}" class="form-control" placeholder="https://facebook.com/...">@error('link_facebook')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>Twitter / X Link</label><input type="url" name="link_twitter" value="{{ old('link_twitter', $event->link_twitter ?? '') }}" class="form-control" placeholder="https://twitter.com/...">@error('link_twitter')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>WhatsApp Link</label><input type="url" name="link_whatsapp" value="{{ old('link_whatsapp', $event->link_whatsapp ?? '') }}" class="form-control" placeholder="https://wa.me/...">@error('link_whatsapp')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+      </div>
     </div>
   </div>
 
