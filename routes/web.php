@@ -56,12 +56,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::get('/vehicles', [AdminVehicleController::class, 'index'])->name('vehicles');
         Route::get('/vehicles-form', [AdminVehicleController::class, 'form'])->name('vehicles.form');
+        Route::get('/vehicles-export', [AdminVehicleController::class, 'export'])->name('vehicles.export');
         Route::post('/vehicles', [AdminVehicleController::class, 'store'])->name('vehicles.store');
         Route::put('/vehicles/{vehicle}', [AdminVehicleController::class, 'update'])->name('vehicles.update');
         Route::delete('/vehicles/{vehicle}', [AdminVehicleController::class, 'destroy'])->name('vehicles.destroy');
 
         Route::get('/machinery', [AdminMachineryController::class, 'index'])->name('machinery');
         Route::get('/machinery-form', [AdminMachineryController::class, 'form'])->name('machinery.form');
+        Route::get('/machinery-export', [AdminMachineryController::class, 'export'])->name('machinery.export');
         Route::post('/machinery', [AdminMachineryController::class, 'store'])->name('machinery.store');
         Route::put('/machinery/{machinery}', [AdminMachineryController::class, 'update'])->name('machinery.update');
         Route::delete('/machinery/{machinery}', [AdminMachineryController::class, 'destroy'])->name('machinery.destroy');
@@ -74,6 +76,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::get('/parts', [AdminPartController::class, 'index'])->name('parts');
         Route::get('/parts-form', [AdminPartController::class, 'form'])->name('parts.form');
+        Route::get('/parts-export', [AdminPartController::class, 'export'])->name('parts.export');
         Route::post('/parts', [AdminPartController::class, 'store'])->name('parts.store');
         Route::put('/parts/{part}', [AdminPartController::class, 'update'])->name('parts.update');
         Route::delete('/parts/{part}', [AdminPartController::class, 'destroy'])->name('parts.destroy');

@@ -7,7 +7,10 @@ Parts — Hamza Enterprises Admin
 @section('content')
 <div class="page-header">
   <div><h1>Parts Inventory</h1><p>Manage spare parts listings and stock.</p></div>
-  <a href="{{ route('admin.parts.form') }}" class="btn btn-primary">+ Add Part</a>
+  <div style="display:flex;gap:10px">
+    <a href="{{ route('admin.parts.export', request()->query()) }}" class="btn btn-secondary">⬇ Export Report</a>
+    <a href="{{ route('admin.parts.form') }}" class="btn btn-primary">+ Add Part</a>
+  </div>
 </div>
 
 @if (session('status'))

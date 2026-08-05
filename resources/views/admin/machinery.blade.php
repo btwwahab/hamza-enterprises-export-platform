@@ -7,7 +7,10 @@ Machinery — Hamza Enterprises Admin
 @section('content')
 <div class="page-header">
   <div><h1>Machinery Inventory</h1><p>Manage all heavy machinery listings, status and pricing.</p></div>
-  <a href="{{ route('admin.machinery.form') }}" class="btn btn-primary">+ Add Machinery</a>
+  <div style="display:flex;gap:10px">
+    <a href="{{ route('admin.machinery.export', request()->query()) }}" class="btn btn-secondary">⬇ Export Report</a>
+    <a href="{{ route('admin.machinery.form') }}" class="btn btn-primary">+ Add Machinery</a>
+  </div>
 </div>
 
 @if (session('status'))

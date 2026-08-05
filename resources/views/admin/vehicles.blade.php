@@ -7,7 +7,10 @@ Vehicles — Hamza Enterprises Admin
 @section('content')
 <div class="page-header">
   <div><h1>Vehicle Inventory</h1><p>Manage all vehicle listings, status and pricing.</p></div>
-  <a href="{{ route('admin.vehicles.form') }}" class="btn btn-primary">+ Add Vehicle</a>
+  <div style="display:flex;gap:10px">
+    <a href="{{ route('admin.vehicles.export', request()->query()) }}" class="btn btn-secondary">⬇ Export Report</a>
+    <a href="{{ route('admin.vehicles.form') }}" class="btn btn-primary">+ Add Vehicle</a>
+  </div>
 </div>
 
 @if (session('status'))

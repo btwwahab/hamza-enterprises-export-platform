@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Concerns\ExportsCsv;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PartRequest;
 use App\Models\Part;
@@ -9,9 +10,11 @@ use Illuminate\Http\Request;
 
 class PartController extends Controller
 {
-    public function index(Request $request)
+    use ExportsCsv;
+
+    protected function filteredQuery(Request $request)
     {
-        $parts = Part::query()
+        return Part::query()
             ->when($request->filled('q'), function ($query) use ($request) {
                 $q = $request->string('q');
                 $query->where(function ($sub) use ($q) {
@@ -21,7 +24,12 @@ class PartController extends Controller
                 });
             })
             ->when($request->filled('category'), fn ($query) => $query->where('category', $request->string('category')))
-            ->when($request->filled('condition'), fn ($query) => $query->where('condition', $request->string('condition')))
+            ->when($request->filled('condition'), fn ($query) => $query->where('condition', $request->string('condition')));
+    }
+
+    public function index(Request $request)
+    {
+        $parts = $this->filteredQuery($request)
             ->orderByDesc('id')
             ->paginate(10)
             ->withQueryString();
@@ -81,5 +89,24 @@ class PartController extends Controller
         $part->delete();
 
         return redirect()->route('admin.parts')->with('status', 'Part deleted.');
+    }
+
+    public function export(Request $request)
+    {
+        $parts = $this->filteredQuery($request)->orderByDesc('id')->get();
+
+        $headers = [
+            'Code', 'Name', 'Maker', 'Model', 'Category', 'Year', 'Price (USD)', 'Condition',
+            'Location', 'Part No', 'OEM No', 'Engine Type', 'Weight', 'Fits Models', 'HP',
+            'Stock', 'Status', 'Created At',
+        ];
+
+        $rows = $parts->map(fn (Part $p) => [
+            $p->code, $p->name, $p->maker, $p->model, $p->category, $p->year, $p->price, $p->condition,
+            $p->location, $p->part_no, $p->oem_no, $p->engine_type, $p->weight, $p->fits_models, $p->hp,
+            $p->stock, $p->status, optional($p->created_at)->format('Y-m-d'),
+        ]);
+
+        return $this->csvDownload('parts-report-' . now()->format('Y-m-d') . '.csv', $headers, $rows);
     }
 }
