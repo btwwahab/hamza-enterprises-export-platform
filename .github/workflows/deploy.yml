@@ -17,6 +17,7 @@ jobs:
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
             set -e
+            git config --global --add safe.directory /var/www/hamza-enterprises
             cd /var/www/hamza-enterprises
             git fetch origin main
             git reset --hard origin/main
