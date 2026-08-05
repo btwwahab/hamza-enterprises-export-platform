@@ -21,10 +21,10 @@
         </div>
 
         <div class="footer-social">
-          <a href="{{ $settings->social_facebook ?: '#' }}" class="social-dot" @if($settings->social_facebook) target="_blank" rel="noopener" @endif>f</a>
-          <a href="{{ $settings->social_linkedin ?: '#' }}" class="social-dot" @if($settings->social_linkedin) target="_blank" rel="noopener" @endif>in</a>
-          <a href="{{ $settings->social_whatsapp ?: '#' }}" class="social-dot" @if($settings->social_whatsapp) target="_blank" rel="noopener" @endif>wa</a>
-          <a href="{{ $settings->social_youtube ?: '#' }}" class="social-dot" @if($settings->social_youtube) target="_blank" rel="noopener" @endif>yt</a>
+          <a href="{{ $settings->social_facebook ?: '#' }}" class="social-dot social-dot-fb" @if($settings->social_facebook) target="_blank" rel="noopener" @endif aria-label="Facebook"><svg width="16" height="16"><use href="#icon-facebook"/></svg></a>
+          <a href="{{ $settings->social_linkedin ?: '#' }}" class="social-dot social-dot-li" @if($settings->social_linkedin) target="_blank" rel="noopener" @endif aria-label="LinkedIn"><svg width="16" height="16"><use href="#icon-linkedin"/></svg></a>
+          <a href="{{ $settings->social_whatsapp ?: '#' }}" class="social-dot social-dot-wa" @if($settings->social_whatsapp) target="_blank" rel="noopener" @endif aria-label="WhatsApp"><svg width="16" height="16"><use href="#icon-whatsapp"/></svg></a>
+          <a href="{{ $settings->social_youtube ?: '#' }}" class="social-dot social-dot-yt" @if($settings->social_youtube) target="_blank" rel="noopener" @endif aria-label="YouTube"><svg width="16" height="16"><use href="#icon-youtube"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
