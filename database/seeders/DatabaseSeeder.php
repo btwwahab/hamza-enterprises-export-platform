@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             TestimonialSeeder::class,
             SettingSeeder::class,
             VideoSeeder::class,
+            InquirySeeder::class,
         ]);
     }
 }
