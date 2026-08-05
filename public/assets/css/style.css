@@ -2343,6 +2343,10 @@ select {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-contact-section-align {
+  margin-top: 43px;
+}
+
 .footer-contact-heading {
   display: block;
   font-size: 0.72rem;

@@ -11,6 +11,7 @@ class Setting extends Model
         'stat_vehicles', 'stat_dealers', 'stat_countries',
         'company_name', 'email', 'address_korea', 'hamza_phone', 'fatima_phone',
         'social_facebook', 'social_linkedin', 'social_whatsapp', 'social_youtube',
+        'office_hours_weekday', 'office_hours_saturday', 'office_hours_sunday',
 
         'showroom1_tag', 'showroom1_name', 'showroom1_address', 'showroom1_phone', 'showroom1_whatsapp', 'showroom1_maps_url',
         'showroom2_tag', 'showroom2_name', 'showroom2_address', 'showroom2_phone', 'showroom2_whatsapp', 'showroom2_maps_url',

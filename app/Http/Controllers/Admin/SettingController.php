@@ -43,6 +43,9 @@ class SettingController extends Controller
             'social_linkedin' => ['nullable', 'url', 'max:255'],
             'social_whatsapp' => ['nullable', 'url', 'max:255'],
             'social_youtube' => ['nullable', 'url', 'max:255'],
+            'office_hours_weekday' => ['required', 'string', 'max:100'],
+            'office_hours_saturday' => ['required', 'string', 'max:100'],
+            'office_hours_sunday' => ['required', 'string', 'max:100'],
         ]);
 
         Setting::current()->update($data);

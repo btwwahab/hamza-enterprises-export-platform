@@ -53,6 +53,14 @@ Settings — Hamza Enterprises Admin
         <div class="form-group"><label>YouTube Channel URL</label><input type="url" name="social_youtube" value="{{ old('social_youtube', $settings->social_youtube) }}" class="form-control" placeholder="https://youtube.com/@hamzaenterprises">@error('social_youtube')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
       </div>
 
+      <h4 style="margin:20px 0 10px;font-size:14px;color:var(--text-soft)">Office Hours</h4>
+      <p style="margin:-6px 0 12px;font-size:12px;color:var(--text-soft)">Shown in the site footer.</p>
+      <div class="form-grid">
+        <div class="form-group"><label>Weekdays</label><input type="text" name="office_hours_weekday" value="{{ old('office_hours_weekday', $settings->office_hours_weekday) }}" class="form-control" placeholder="Mon – Fri: 9:00 – 18:00 KST">@error('office_hours_weekday')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>Saturday</label><input type="text" name="office_hours_saturday" value="{{ old('office_hours_saturday', $settings->office_hours_saturday) }}" class="form-control" placeholder="Saturday: 10:00 – 16:00 KST">@error('office_hours_saturday')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>Sunday</label><input type="text" name="office_hours_sunday" value="{{ old('office_hours_sunday', $settings->office_hours_sunday) }}" class="form-control" placeholder="Sunday: Closed">@error('office_hours_sunday')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+      </div>
+
       <div style="margin-top:16px"><button type="submit" class="btn btn-primary">Save Company Info</button></div>
     </div>
   </div>

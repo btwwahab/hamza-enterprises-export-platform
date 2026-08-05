@@ -9,16 +9,6 @@
         <div class="footer-location"><svg width="18" height="18">
             <use href="#icon-pin" />
           </svg> {{ $settings->address_korea }}</div>
-        <div class="footer-contact-section">
-          <span class="footer-contact-heading">Fatima Trading</span>
-          <div class="footer-location"><svg width="18" height="18"><use href="#icon-phone"/></svg> {{ $settings->fatima_phone }}</div>
-          <div class="footer-location"><svg width="18" height="18"><use href="#icon-whatsapp"/></svg> WhatsApp: {{ $settings->fatima_phone }}</div>
-        </div>
-        <div class="footer-contact-section">
-          <span class="footer-contact-heading">Hamza Enterprises</span>
-          <div class="footer-location"><svg width="18" height="18"><use href="#icon-phone"/></svg> {{ $settings->hamza_phone }}</div>
-          <div class="footer-location"><svg width="18" height="18"><use href="#icon-whatsapp"/></svg> WhatsApp: {{ $settings->hamza_phone }}</div>
-        </div>
 
         <div class="footer-social">
           <a href="{{ $settings->social_facebook ?: '#' }}" class="social-dot social-dot-fb" @if($settings->social_facebook) target="_blank" rel="noopener" @endif aria-label="Facebook"><svg width="16" height="16"><use href="#icon-facebook"/></svg></a>
@@ -44,10 +34,15 @@
             <use href="#icon-clock" />
           </svg>
           <div>
-            <span>Mon – Fri: 9:00 – 18:00 KST</span>
-            <span>Saturday: 10:00 – 16:00 KST</span>
-            <span>Sunday: Closed</span>
+            <span>{{ $settings->office_hours_weekday }}</span>
+            <span>{{ $settings->office_hours_saturday }}</span>
+            <span>{{ $settings->office_hours_sunday }}</span>
           </div>
+        </div>
+        <div class="footer-contact-section footer-contact-section-align">
+          <span class="footer-contact-heading">Fatima Trading</span>
+          <div class="footer-location"><svg width="18" height="18"><use href="#icon-phone"/></svg> {{ $settings->fatima_phone }}</div>
+          <div class="footer-location"><svg width="18" height="18"><use href="#icon-whatsapp"/></svg> WhatsApp: {{ $settings->fatima_phone }}</div>
         </div>
       </div>
       <div class="footer-col footer-newsletter">
@@ -57,14 +52,19 @@
           <input type="email" placeholder="you@example.com" required aria-label="Email address">
           <button type="submit" class="btn btn-primary">Join</button>
         </form>
+        <div class="footer-contact-section">
+          <span class="footer-contact-heading">Hamza Enterprises</span>
+          <div class="footer-location"><svg width="18" height="18"><use href="#icon-phone"/></svg> {{ $settings->hamza_phone }}</div>
+          <div class="footer-location"><svg width="18" height="18"><use href="#icon-whatsapp"/></svg> WhatsApp: {{ $settings->hamza_phone }}</div>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
         <span>© <span id="year"></span> Hamza Enterprises | Fatima Trading. All rights reserved.</span>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
+          <a href="{{ route('terms-conditions') }}">Terms of Service</a>
         </div>
       </div>
     </div>

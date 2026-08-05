@@ -21,6 +21,9 @@ class SettingSeeder extends Seeder
             'address_korea' => 'Byeoksan Village, Yeonsu-gu, Incheon, South Korea',
             'hamza_phone' => '+82 10 6499 5384',
             'fatima_phone' => '+82 10 8030 1614',
+            'office_hours_weekday' => 'Mon – Fri: 9:00 – 18:00 KST',
+            'office_hours_saturday' => 'Saturday: 10:00 – 16:00 KST',
+            'office_hours_sunday' => 'Sunday: Closed',
 
             'showroom1_tag' => 'Head Office',
             'showroom1_name' => 'Hamza Enterprises — Head Office',
