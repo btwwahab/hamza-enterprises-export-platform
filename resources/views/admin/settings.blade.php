@@ -43,6 +43,16 @@ Settings — Hamza Enterprises Admin
         <div class="form-group col-2"><label>Email</label><input type="email" name="email" value="{{ old('email', $settings->email) }}" class="form-control"></div>
         <div class="form-group col-2"><label>Office Address</label><input type="text" name="address_korea" value="{{ old('address_korea', $settings->address_korea) }}" class="form-control"></div>
       </div>
+
+      <h4 style="margin:20px 0 10px;font-size:14px;color:var(--text-soft)">Social Media Links</h4>
+      <p style="margin:-6px 0 12px;font-size:12px;color:var(--text-soft)">Shown as icons in the site footer. Leave blank to hide a link.</p>
+      <div class="form-grid">
+        <div class="form-group"><label>Facebook Page URL</label><input type="url" name="social_facebook" value="{{ old('social_facebook', $settings->social_facebook) }}" class="form-control" placeholder="https://facebook.com/hamzaenterprises">@error('social_facebook')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>LinkedIn Page URL</label><input type="url" name="social_linkedin" value="{{ old('social_linkedin', $settings->social_linkedin) }}" class="form-control" placeholder="https://linkedin.com/company/hamzaenterprises">@error('social_linkedin')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>WhatsApp Link</label><input type="url" name="social_whatsapp" value="{{ old('social_whatsapp', $settings->social_whatsapp) }}" class="form-control" placeholder="https://wa.me/821064995384">@error('social_whatsapp')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+        <div class="form-group"><label>YouTube Channel URL</label><input type="url" name="social_youtube" value="{{ old('social_youtube', $settings->social_youtube) }}" class="form-control" placeholder="https://youtube.com/@hamzaenterprises">@error('social_youtube')<br><small style="color:var(--danger)">{{ $message }}</small>@enderror</div>
+      </div>
+
       <div style="margin-top:16px"><button type="submit" class="btn btn-primary">Save Company Info</button></div>
     </div>
   </div>

@@ -21,10 +21,10 @@
         </div>
 
         <div class="footer-social">
-          <a href="#" class="social-dot">f</a>
-          <a href="#" class="social-dot">in</a>
-          <a href="#" class="social-dot">wa</a>
-          <a href="#" class="social-dot">yt</a>
+          <a href="{{ $settings->social_facebook ?: '#' }}" class="social-dot" @if($settings->social_facebook) target="_blank" rel="noopener" @endif>f</a>
+          <a href="{{ $settings->social_linkedin ?: '#' }}" class="social-dot" @if($settings->social_linkedin) target="_blank" rel="noopener" @endif>in</a>
+          <a href="{{ $settings->social_whatsapp ?: '#' }}" class="social-dot" @if($settings->social_whatsapp) target="_blank" rel="noopener" @endif>wa</a>
+          <a href="{{ $settings->social_youtube ?: '#' }}" class="social-dot" @if($settings->social_youtube) target="_blank" rel="noopener" @endif>yt</a>
         </div>
       </div>
       <div class="footer-col">

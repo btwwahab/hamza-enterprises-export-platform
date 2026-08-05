@@ -39,6 +39,10 @@ class SettingController extends Controller
             'address_korea' => ['required', 'string', 'max:255'],
             'hamza_phone' => ['required', 'string', 'max:30'],
             'fatima_phone' => ['required', 'string', 'max:30'],
+            'social_facebook' => ['nullable', 'url', 'max:255'],
+            'social_linkedin' => ['nullable', 'url', 'max:255'],
+            'social_whatsapp' => ['nullable', 'url', 'max:255'],
+            'social_youtube' => ['nullable', 'url', 'max:255'],
         ]);
 
         Setting::current()->update($data);
